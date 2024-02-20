@@ -1,18 +1,20 @@
 import { useState } from 'react'
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import listado from './components/listado';
-import formulario from './components/formulario';
-import buscador from './components/buscador';
-import alert from './components/alert';
 import { BaseColaboradores } from './BaseColaboradores';
+import Listado from './components/Listado';
+import Formulario from './components/Formulario';
+import Buscador from './components/Buscador';
+import Alert from './components/Alert';
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-      
+      <div className="App">
+        <h1>Lista de colaboradores</h1>
+        <Listado />
+      </div>
     </>
   )
 }
