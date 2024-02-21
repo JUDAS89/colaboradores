@@ -16,7 +16,7 @@ function App() {
   return (
     <>
       <div className="App">
-        <h1>Lista de colaboradores</h1>
+        <h1>Lista de colaboradores, prueba</h1>
         <Listado />
         <Formulario showAlert={showAlert}/>
         <Alert message={alertInfo.message} variant={alertInfo.variant} />
