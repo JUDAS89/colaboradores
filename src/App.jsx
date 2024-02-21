@@ -8,12 +8,18 @@ import Buscador from './components/Buscador';
 import Alert from './components/Alert';
 
 function App() {
+  const [alertInfo, setAlertInfo] = useState({ message: '', variant: '' });
 
+  const showAlert = (message, variant) => {
+    setAlertInfo({ message, variant });
+  };
   return (
     <>
       <div className="App">
         <h1>Lista de colaboradores</h1>
         <Listado />
+        <Formulario showAlert={showAlert}/>
+        <Alert message={alertInfo.message} variant={alertInfo.variant} />
       </div>
     </>
   )
