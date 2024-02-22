@@ -1,14 +1,14 @@
 import { useState } from 'react'
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import { BaseColaboradores } from '../BaseColaboradores'
-import Listado from './components/Listado'
-import Formulario from './components/Formulario'
+import { BaseColaboradores } from './BaseColaboradores'
+import Listado from './components/listado'
+import Formulario from './components/formulario'
 import Buscador from './components/buscador'
-import Alert from './components/Alert'
+import Alert from './components/alert'
 
 function App() {
-  const [alertInfo, setAlertInfo] = useState({ message: '', variant: '' });
+  const [alertInfo, setAlertInfo] = useState({ message: '', variant: '' })
 
   const showAlert = (message, variant) => {
     setAlertInfo({ message, variant })
