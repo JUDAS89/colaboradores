@@ -16,7 +16,7 @@ function App() {
   return (
     <>
       <h1>Lista de colaboradores</h1>
-
+      <Buscador/>
       <div className='App'>
       <Listado/>
         <div className='addColaborator'>

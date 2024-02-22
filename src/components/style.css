@@ -29,3 +29,7 @@ h1, h4{
     text-align: left;
 }
 
+#buscador{
+    margin-bottom: 20px;
+    width: 280px;
+}
