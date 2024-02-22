@@ -2,6 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
+import './style.css'
 
 
 const Formulario = ({ showAlert }) => {
@@ -51,7 +52,7 @@ const Formulario = ({ showAlert }) => {
         <Form.Control type="text" placeholder="Telefono del colaborador" value={telefono} onChange={(e)=>setTelefono(e.target.value)}/>
       </Form.Group>
 
-      <Button variant="success" type="submit" className='btnForm'>
+      <Button type="submit" className='btnForm'>
         Agregar Colaborador
       </Button>
     </Form>

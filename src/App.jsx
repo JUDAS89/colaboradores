@@ -15,11 +15,15 @@ function App() {
   }
   return (
     <>
-      <div className="App">
-        <h1>Lista de colaboradores</h1>
-        <Listado />
-        <Formulario showAlert={showAlert}/>
-        <Alert message={alertInfo.message} variant={alertInfo.variant} />
+      <h1>Lista de colaboradores</h1>
+
+      <div className='App'>
+      <Listado/>
+        <div className='addColaborator'>
+          <h4>Agregar colaborador</h4>
+          <Formulario showAlert={showAlert}/>
+          <Alert message={alertInfo.message} variant={alertInfo.variant} />
+        </div>
       </div>
     </>
   )
