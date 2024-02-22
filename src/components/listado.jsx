@@ -1,6 +1,6 @@
 import React from 'react'
-import Table from 'react-bootstrap/Table';
-import { BaseColaboradores } from '../BaseColaboradores';
+import Table from 'react-bootstrap/Table'
+import { BaseColaboradores } from '../BaseColaboradores'
 
 const Listado = () => {
     return (
@@ -28,7 +28,7 @@ const Listado = () => {
                 ))}
             </tbody>
         </Table>
-    );
-};
+    )
+}
 
 export default Listado
