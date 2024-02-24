@@ -10,6 +10,7 @@ import {BaseColaboradores} from './BaseColaboradores'
 const App=() => {
   const [alertInfo, setAlertInfo] = useState({ message: '', variant: '' })
   const [colaboradores, setColaboradores] = useState(BaseColaboradores)
+  const [busqueda, setBusqueda] = useState('');
 
   const showAlert = (message, variant) => {
     setAlertInfo({ message, variant })
@@ -24,12 +25,20 @@ const App=() => {
     setColaboradores(nuevosColaboradores)
   }
 
+  const handleBuscar = (texto) => {
+    setBusqueda(texto);
+  };
+
+  const colaboradoresFiltrados = colaboradores.filter((colaborador) =>
+    colaborador.nombre.toLowerCase().includes(busqueda.toLowerCase())
+  );
+
   return (
     <>
       <h1>Lista de colaboradores</h1>
-      <Buscador onBuscar={(texto) => console.log('Búsqueda:', texto)}/>
+      <Buscador onBuscar={handleBuscar}/>
       <div className='App'>
-      <Listado colaboradores={colaboradores} handleEliminarColaborador={handleEliminarColaborador}/>
+      <Listado colaboradores={colaboradoresFiltrados} handleEliminarColaborador={handleEliminarColaborador}/>
           <div className='addColaborator'>
             <h4>Agregar colaborador</h4>
             <Formulario showAlert={showAlert} actualizarColaboradores={handleActualizarColaboradores} />

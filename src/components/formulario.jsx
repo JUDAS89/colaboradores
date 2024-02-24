@@ -6,7 +6,7 @@ import './style.css'
 
 const Formulario = ({ showAlert, actualizarColaboradores }) => {
   const [nombre, setNombre]=useState("")
-  const [email, setEmail]=useState("")
+  const [correo, setCorreo]=useState("")
   const [edad, setEdad]=useState("")
   const [cargo, setCargo]=useState("")
   const [telefono, setTelefono]=useState("")
@@ -15,14 +15,14 @@ const Formulario = ({ showAlert, actualizarColaboradores }) => {
     e.preventDefault()
     let hasError=false
 
-  if (nombre === '' || email === '' || edad === '' || cargo === '' || telefono === '') {
+  if (nombre === '' || correo === '' || edad === '' || cargo === '' || telefono === '') {
     showAlert("Completa todos los campos", "danger")
     hasError=true
   } 
 
   if (!hasError){
     const nuevoColaborador ={
-      id: Math.random(), nombre, email, edad, cargo, telefono
+      id: Math.random(), nombre, correo, edad, cargo, telefono
     }
 
     actualizarColaboradores(nuevoColaborador)
@@ -30,7 +30,7 @@ const Formulario = ({ showAlert, actualizarColaboradores }) => {
     showAlert("Colaborador agregado", "success")
 
     setNombre('')
-    setEmail('')
+    setCorreo('')
     setEdad('')
     setCargo('')
     setTelefono('')
@@ -46,7 +46,7 @@ const Formulario = ({ showAlert, actualizarColaboradores }) => {
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Control type="email" placeholder="Email del colaborador" value={email} onChange={(e)=>setEmail(e.target.value)}/>
+        <Form.Control type="email" placeholder="Email del colaborador" value={correo} onChange={(e)=>setCorreo(e.target.value)}/>
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="formBasicAge">  
