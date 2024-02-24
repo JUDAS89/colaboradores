@@ -1,9 +1,9 @@
 import React from 'react'
 import Table from 'react-bootstrap/Table'
-import { BaseColaboradores } from '../BaseColaboradores'
 import './style.css'
 
-const Listado = () => {
+const Listado = ({colaboradores, handleEliminarColaborador}) => {
+    
     return (
         <Table striped bordered hover>
             <thead>
@@ -13,16 +13,20 @@ const Listado = () => {
                     <th>Edad</th>
                     <th>Cargo</th>
                     <th>Teléfono</th>
+                    <th>Acciones</th>
                 </tr>
             </thead>
             <tbody>
-                {BaseColaboradores.map((colaborador) => (
+                {colaboradores.map((colaborador) => (
                     <tr key={colaborador.id}>
                         <td>{colaborador.nombre}</td>
                         <td>{colaborador.correo}</td>
                         <td>{colaborador.edad}</td>
                         <td>{colaborador.cargo}</td>
                         <td>{colaborador.telefono}</td>
+                        <td>
+                            <button className='btnEliminar' onClick={() => handleEliminarColaborador(colaborador.id)}>Eliminar</button>
+                        </td>
                     </tr>
                 ))}
             </tbody>

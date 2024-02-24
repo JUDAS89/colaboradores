@@ -17,8 +17,13 @@
     margin-bottom: 15px;
 }
 
+.btnEliminar{
+    background-color: blueviolet;
+}
+
 table {
     height: 40px;
+    font-size: small;
 }
 
 table td {

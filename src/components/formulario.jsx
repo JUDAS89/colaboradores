@@ -1,21 +1,18 @@
-import React from 'react'
-import { useState } from 'react'
+import React, { useState } from 'react'
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 import './style.css'
 
 
-const Formulario = ({ showAlert }) => {
+const Formulario = ({ showAlert, actualizarColaboradores }) => {
   const [nombre, setNombre]=useState("")
   const [email, setEmail]=useState("")
   const [edad, setEdad]=useState("")
   const [cargo, setCargo]=useState("")
   const [telefono, setTelefono]=useState("")
-  const [error, setError]=useState(false)
 
   const validarRegistro=(e)=>{
     e.preventDefault()
-
     let hasError=false
 
   if (nombre === '' || email === '' || edad === '' || cargo === '' || telefono === '') {
@@ -24,7 +21,19 @@ const Formulario = ({ showAlert }) => {
   } 
 
   if (!hasError){
+    const nuevoColaborador ={
+      id: Math.random(), nombre, email, edad, cargo, telefono
+    }
+
+    actualizarColaboradores(nuevoColaborador)
+
     showAlert("Colaborador agregado", "success")
+
+    setNombre('')
+    setEmail('')
+    setEdad('')
+    setCargo('')
+    setTelefono('')
   }
   }
 
