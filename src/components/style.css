@@ -38,3 +38,15 @@ h1, h4{
     margin-bottom: 20px;
     width: 280px;
 }
+
+@media (max-width: 576px) {
+      .mb-3, .btnForm {
+        width: 100%;
+      }
+      #buscador {
+        display: none;
+      }
+      .listado, #buscador {
+        display: none; 
+      }
+  }

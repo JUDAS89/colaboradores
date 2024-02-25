@@ -5,7 +5,7 @@ import './style.css'
 const Listado = ({colaboradores, handleEliminarColaborador}) => {
     
     return (
-        <Table striped bordered hover>
+        <Table striped bordered hover className='listado'>
             <thead>
                 <tr>
                     <th>Nombre</th>
